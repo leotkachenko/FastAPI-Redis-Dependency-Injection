@@ -1,0 +1,14 @@
+{
+    "name": "FastAPI + Redis + Dependency Injection",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "app",
+    "workspaceFolder": "/workspace/${localWorkspaceFolderBasename}",
+    "features": {
+        "docker-in-docker": {
+            "version": "latest",
+            "moby": true,
+            "dockerDashComposeVersion": "v1"
+        }
+    },
+    "postCreateCommand": "poetry install --no-root"
+}

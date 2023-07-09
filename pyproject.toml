@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "fastapi-redis-dependency-injection"
+version = "0.1.0"
+description = ""
+authors = ["Leonid Tkachenko <18leonidtkachenko@gmail.com>"]
+readme = "README.md"
+packages = [{include = "app"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.100.0"
+uvicorn = "^0.22.0"
+dependency-injector = "^4.41.0"
+redis = "^4.6.0"
+pydantic-settings = "^2.0.1"
+black = "^23.3.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+start = "app.main:main"

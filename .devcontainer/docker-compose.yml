@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  app:
+     build:
+       context: ..
+       dockerfile: .devcontainer/Dockerfile
+    
+     volumes:
+      - ../..:/workspace:cached
+      - '~/.shh/:/home/vscode/.shh/'
+     command: sleep infinity
+     depends_on:
+      - cache
+  cache:
+      image: redis:6.2-alpine
+      container_name: redis_cache
+      restart: unless-stopped
+      ports:
+          - 6379:6379/tcp
+
+    
