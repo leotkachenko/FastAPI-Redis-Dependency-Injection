@@ -25,7 +25,6 @@ async def get_all_users(cache=Depends(cache)) -> list[UserResponseDTO]:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND, detail="User not found"
         )
-    print(users)
     return users
 
 
